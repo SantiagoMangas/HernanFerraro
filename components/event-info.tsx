@@ -167,9 +167,11 @@ export function EventInfo() {
   )
 }
 
-function CuposCounter() {
-  const availableSpots = 12 // This could be dynamic
+interface CuposCounterProps {
+  availableSpots?: number
+}
 
+function CuposCounter({ availableSpots = 12 }: CuposCounterProps) {
   return (
     <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 border border-white/10">
       <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />

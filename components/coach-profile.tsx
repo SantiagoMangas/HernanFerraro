@@ -56,7 +56,7 @@ export function CoachProfile() {
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-transparent to-blue-500/30 z-10 mix-blend-overlay" />
               
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-09%20at%2014.12.28-M4PXC1G53SOuOlrkk0ruLFagnyBkTK.jpeg"
+                src="HernanFerraro2.jpg"
                 alt="Hernán Ferraro - Entrenador de Vóley"
                 fill
                 className="object-cover object-top"
