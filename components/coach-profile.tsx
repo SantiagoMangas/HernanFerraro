@@ -93,17 +93,41 @@ export function CoachProfile() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Hernán Ferraro
             </h2>
-            <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6">
-              Hernán Ferraro es uno de los entrenadores más reconocidos del vóley argentino. 
-              Con más de dos décadas de experiencia en el alto rendimiento, ha desarrollado 
-              una metodología única que combina la técnica tradicional con las innovaciones 
-              más recientes del deporte.
-            </p>
-            <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-8">
-              Su trayectoria incluye la formación de jugadores de elite y la capacitación 
-              de entrenadores en toda Latinoamérica. Sus cursos son reconocidos por su 
-              enfoque práctico y aplicable.
-            </p>
+            
+            <div className="space-y-4 mb-8">
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Ex jugador de la <span className="text-cyan-400">Selección Argentina</span></span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Participante del <span className="text-cyan-400">Mundial 2002</span></span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span><span className="text-cyan-400">Juegos Olímpicos Atenas 2004</span></span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Ex Director Técnico de <span className="text-cyan-400">Las Panteras</span> (Selección Femenina)</span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Clasificación a <span className="text-cyan-400">Tokio 2020 (Masculino)</span></span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span><span className="text-cyan-400">Campeón Liga Argentina</span> con Club Ciudad (Masculino)</span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Ex Asistente de <span className="text-cyan-400">Julio Velasco</span> Seleccion Argentina</span>
+              </p>
+              <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
+                <span className="text-cyan-400 font-bold mt-1">•</span>
+                <span>Experiencia internacional en Latinoamérica</span>
+              </p>
+            </div>
 
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">

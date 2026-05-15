@@ -152,6 +152,22 @@ export function RegistrationForm() {
                 </div>
 
                 <div className="space-y-2">
+                  <label htmlFor="hospedaje" className="text-white/80 text-sm font-medium block">
+                    ¿Necesita hospedaje? *
+                  </label>
+                  <select
+                    id="hospedaje"
+                    name="hospedaje"
+                    required
+                    className="w-full px-4 py-3 sm:py-4 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" className="bg-card text-white">Seleccioná una opción</option>
+                    <option value="si" className="bg-card text-white">Sí</option>
+                    <option value="no" className="bg-card text-white">No</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
                   <label htmlFor="comentarios" className="text-white/80 text-sm font-medium block">
                     Comentarios
                   </label>

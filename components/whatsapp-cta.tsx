@@ -39,13 +39,13 @@ export function WhatsappCTA() {
             </p>
 
             <a
-              href="https://wa.me/5491234567890?text=Hola!%20Quiero%20info%20sobre%20la%20capacitación%20con%20Hernán%20Ferraro"
+              href="https://wa.me/2915093873?text=Hola!%20Quiero%20info%20sobre%20la%20clínica%20de%20vóley%20con%20Hernán%20Ferraro"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-green-500/30"
             >
               <MessageCircle className="w-5 h-5" />
-              Hablá con nosotros
+              Hablá con Claudio (291-5093873)
             </a>
           </div>
         </motion.div>
@@ -57,7 +57,7 @@ export function WhatsappCTA() {
 export function WhatsappFloatingButton() {
   return (
     <motion.a
-      href="https://wa.me/5491234567890?text=Hola!%20Quiero%20info%20sobre%20la%20capacitación%20con%20Hernán%20Ferraro"
+      href="https://wa.me/2915093873?text=Hola!%20Quiero%20info%20sobre%20la%20clínica%20de%20vóley%20con%20Hernán%20Ferraro"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

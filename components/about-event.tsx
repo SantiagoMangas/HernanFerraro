@@ -63,7 +63,7 @@ export function AboutEvent() {
           </h2>
           <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto px-4">
             Una oportunidad única de aprender directamente de Hernán Ferraro, 
-            uno de los referentes más importantes del vóley argentino.
+            uno de los referentes más importantes del vóley argentino, tanto <strong>rama femenina como rama masculina.</strong>
           </p>
         </motion.div>
 

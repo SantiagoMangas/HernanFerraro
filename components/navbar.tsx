@@ -40,10 +40,10 @@ export function Navbar() {
           <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 sm:gap-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center">
-                <span className="text-background font-bold text-xs sm:text-sm">CAL</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
+                <img src="/logo-liniers.png" alt="Club Atlético Liniers" className="w-full h-full object-contain" />
               </div>
-              <span className="text-white font-semibold text-sm sm:text-base hidden sm:block">Club Atlético Liniers</span>
+              <span className="text-white font-semibold text-sm sm:text-base hidden sm:block">Liniers Vóley</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -61,12 +61,14 @@ export function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link
-                href="#inscripcion"
+              <a
+                href="https://wa.me/2915093873?text=Hola!%20Quiero%20info%20sobre%20la%20clínica%20de%20vóley%20con%20Hernán%20Ferraro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-background font-semibold text-sm rounded-lg transition-all duration-300 glow-cyan-sm hover:glow-cyan"
               >
-                Reservar Lugar
-              </Link>
+                Contactar
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -108,7 +110,7 @@ export function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-4 px-8 py-3 bg-cyan-500 text-background font-semibold rounded-lg glow-cyan"
                 >
-                  Reservar Lugar
+                  Contactar
                 </Link>
               </div>
             </div>

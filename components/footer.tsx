@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Facebook, Mail } from "lucide-react"
+import { Instagram, Facebook, MessageCircle } from "lucide-react"
 
 export function Footer() {
   return (
@@ -11,16 +11,16 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                <span className="text-background font-bold text-sm">CAL</span>
+              <div className="w-10 h-10 flex items-center justify-center">
+                <img src="/logo-liniers.png" alt="Club Atlético Liniers" className="w-full h-full object-contain" />
               </div>
               <div>
-                <p className="text-white font-semibold">Club Atlético Liniers</p>
+                <p className="text-white font-semibold">Liniers Vóley</p>
                 <p className="text-white/50 text-sm">Bahía Blanca</p>
               </div>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
-              Organizadores de la capacitación profesional de vóley con Hernán Ferraro.
+              Clínica de vóley con Hernán Ferraro.
             </p>
           </div>
 
@@ -56,15 +56,15 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-2">
               <li className="text-white/50 text-sm">
-                Club Atlético Liniers
+                Claudio Rodríguez
+              </li>
+              <li>
+                <a href="https://wa.me/2915093873" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium">
+                  WhatsApp: 291-5093873
+                </a>
               </li>
               <li className="text-white/50 text-sm">
                 Bahía Blanca, Argentina
-              </li>
-              <li>
-                <a href="mailto:info@caliniers.com" className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm">
-                  info@caliniers.com
-                </a>
               </li>
             </ul>
           </div>
@@ -74,7 +74,7 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Seguinos</h4>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/liniersvoley_bahiablanca/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
@@ -83,7 +83,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5 text-white/70" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/liniers.voley.9?locale=es_LA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
@@ -92,11 +92,13 @@ export function Footer() {
                 <Facebook className="w-5 h-5 text-white/70" />
               </a>
               <a
-                href="mailto:info@caliniers.com"
+                href="https://wa.me/2915093873"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
-                aria-label="Email"
+                aria-label="WhatsApp"
               >
-                <Mail className="w-5 h-5 text-white/70" />
+                <MessageCircle className="w-5 h-5 text-white/70" />
               </a>
             </div>
           </div>
@@ -108,7 +110,7 @@ export function Footer() {
             © {new Date().getFullYear()} Club Atlético Liniers. Todos los derechos reservados.
           </p>
           <p className="text-white/40 text-sm">
-            Capacitación Hernán Ferraro
+            Clínica de Vóley - Hernán Ferraro
           </p>
         </div>
       </div>

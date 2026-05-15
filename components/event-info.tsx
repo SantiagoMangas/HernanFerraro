@@ -7,21 +7,92 @@ import { Calendar, Clock, MapPin, Users, AlertCircle } from "lucide-react"
 
 const schedule = [
   {
-    day: "Día 1",
-    date: "Viernes",
+    day: "SÁBADO",
+    date: "20 de junio",
     sessions: [
-      { time: "09:00 - 12:00", title: "Fundamentos del entrenamiento moderno" },
-      { time: "14:00 - 17:00", title: "Sesión práctica en cancha" },
-      { time: "17:30 - 19:00", title: "Análisis y debate" },
+      {
+        time: "10:00 HS",
+        title: "Introducción y práctico",
+      },
+      {
+        time: "",
+        title: "• Pase y levantada",
+      },
+      {
+        time: "",
+        title: "• Sistemas de saque y recepción",
+      },
+      {
+        time: "",
+        title: "• Saque recepción ataque (mujeres)",
+      },
+
+      {
+        time: "15:00 HS",
+        title: "Práctico",
+      },
+      {
+        time: "",
+        title: "• Bloqueo individual",
+      },
+      {
+        time: "",
+        title: "• Defensa individual",
+      },
+      {
+        time: "",
+        title: "• Transición",
+      },
+
+      {
+        time: "-----------------------------BREAK--------------------------------",
+        title: "",
+      },
+
+      {
+        time: "17:00 HS",
+        title: "Práctico",
+      },
+      {
+        time: "",
+        title: "• Sistemas de ataque y cobertura",
+      },
+      {
+        time: "",
+        title: "• Sistema bloqueo-defensa (varones)",
+      },
     ],
   },
+
   {
-    day: "Día 2",
-    date: "Sábado",
+    day: "DOMINGO",
+    date: "21 de junio",
     sessions: [
-      { time: "09:00 - 12:00", title: "Metodologías avanzadas" },
-      { time: "14:00 - 17:00", title: "Taller práctico intensivo" },
-      { time: "17:30 - 18:30", title: "Cierre y certificados" },
+      {
+        time: "10:00 HS",
+        title: "Práctico",
+      },
+      {
+        time: "",
+        title: "• El armador",
+      },
+      {
+        time: "",
+        title: "• Características y entrenamiento",
+      },
+      {
+        time: "",
+        title: "• Lo previo y durante el juego",
+      },
+
+      {
+        time: "14:00 HS",
+        title: "Estudio del adversario",
+      },
+      {
+        time: "17:00 HS",
+        title: "Entrenamiento de Primera de Liniers dirigido por Ferraro",
+      }
     ],
   },
 ]
@@ -58,8 +129,8 @@ export function EventInfo() {
           >
             <Calendar className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
             <h3 className="text-white font-semibold text-lg mb-2">Fecha</h3>
-            <p className="text-white/60 text-sm">Viernes y Sábado</p>
-            <p className="text-cyan-400 font-bold">Julio 2026</p>
+            <p className="text-white/60 text-sm">Sábado 20 y Domingo 21</p>
+            <p className="text-cyan-400 font-bold">Junio 2026</p>
           </motion.div>
 
           <motion.div
@@ -70,8 +141,8 @@ export function EventInfo() {
           >
             <Clock className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
             <h3 className="text-white font-semibold text-lg mb-2">Horarios</h3>
-            <p className="text-white/60 text-sm">9:00 a 19:00 hs</p>
-            <p className="text-cyan-400 font-bold">2 Jornadas Completas</p>
+            <p className="text-white/60 text-sm">Sábado desde 10 hs</p>
+            <p className="text-cyan-400 font-bold">Domingo desde 10 hs</p>
           </motion.div>
 
           <motion.div
@@ -94,8 +165,8 @@ export function EventInfo() {
           >
             <Users className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
             <h3 className="text-white font-semibold text-lg mb-2">Cupos</h3>
-            <p className="text-white/60 text-sm">Vacantes limitadas</p>
-            <p className="text-cyan-400 font-bold">Solo 30 lugares</p>
+            <p className="text-cyan-400 font-bold">Limitados</p>
+            <p className="text-white/60 text-sm">Certificado incluido</p>
           </motion.div>
         </div>
 
@@ -113,10 +184,9 @@ export function EventInfo() {
             <div className="flex-1">
               <h4 className="text-white font-semibold text-lg mb-1">¡Cupos Limitados!</h4>
               <p className="text-white/60 text-sm sm:text-base">
-                Solo hay 30 lugares disponibles. Reservá tu lugar ahora para no quedarte afuera.
+                Certificado, Interés Municipal y lugares limitados. Reservá tu lugar ahora para no quedarte afuera.
               </p>
             </div>
-            <CuposCounter />
           </div>
         </motion.div>
 
@@ -164,19 +234,5 @@ export function EventInfo() {
         </motion.div>
       </div>
     </section>
-  )
-}
-
-interface CuposCounterProps {
-  availableSpots?: number
-}
-
-function CuposCounter({ availableSpots = 12 }: CuposCounterProps) {
-  return (
-    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 border border-white/10">
-      <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-      <span className="text-cyan-400 font-bold text-lg">{availableSpots}</span>
-      <span className="text-white/60 text-sm">lugares disponibles</span>
-    </div>
   )
 }
