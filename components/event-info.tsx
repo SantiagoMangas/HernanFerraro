@@ -66,7 +66,7 @@ export function EventInfo() {
         </motion.div>
 
         {/* Info cards — 2 cols on mobile, 4 on lg */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10 sm:mb-14">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-2 sm:mb-4">
           {[
             {
               icon: <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400 mx-auto mb-3" />,

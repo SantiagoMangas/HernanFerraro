@@ -2,29 +2,77 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Send, CheckCircle2, Loader2 } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 export function RegistrationForm() {
   const ref = useRef(null)
+  const formRef = useRef<HTMLFormElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  // Inicializar EmailJS en el montaje del componente
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (!formRef.current) return
+
+    // Validar que las variables de entorno estén configuradas
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      setError("Error de configuración: Las variables de EmailJS no están configuradas correctamente.")
+      console.error("EmailJS configuration missing")
+      return
+    }
+
     setIsSubmitting(true)
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setError(null)
+
+    try {
+      await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
+      )
+      setIsSubmitted(true)
+      
+      // Limpiar el formulario después de envío exitoso
+      if (formRef.current) {
+        formRef.current.reset()
+      }
+      
+      // Opcional: resetear el estado de éxito después de 5 segundos
+      // para permitir nuevas inscripciones
+      // setTimeout(() => {
+      //   setIsSubmitted(false)
+      // }, 5000)
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "desconocido"
+      setError("Hubo un error al enviar el formulario. Por favor intentá de nuevo.")
+      console.error("EmailJS error:", errorMessage)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <section id="inscripcion" className="py-20 sm:py-32 relative" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0D1B2A]/30 to-background" />
-      
+
       {/* Decorative glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl" />
 
@@ -56,7 +104,7 @@ export function RegistrationForm() {
         >
           {/* Form glow border */}
           <div className="absolute -inset-px bg-gradient-to-r from-cyan-500/50 via-blue-500/50 to-cyan-500/50 rounded-3xl blur-sm" />
-          
+
           <div className="relative p-6 sm:p-8 lg:p-12 rounded-3xl glass-strong">
             {isSubmitted ? (
               <motion.div
@@ -73,7 +121,7 @@ export function RegistrationForm() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-2">
                     <label htmlFor="nombre" className="text-white/80 text-sm font-medium block">
@@ -179,6 +227,17 @@ export function RegistrationForm() {
                     placeholder="¿Tenés alguna consulta o comentario?"
                   />
                 </div>
+
+                {/* Error message */}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm text-center"
+                  >
+                    {error}
+                  </motion.div>
+                )}
 
                 <button
                   type="submit"

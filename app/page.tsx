@@ -5,7 +5,8 @@ import { CoachProfile } from "@/components/coach-profile"
 import { EventInfo } from "@/components/event-info"
 import { Sponsors } from "@/components/sponsors"
 import { Pricing } from "@/components/pricing"
-import { RegistrationForm } from "@/components/registration-form"
+import { RegistrationForm } from "@/components/RegistrationForm"
+import { PaymentSection } from "@/components/PaymentSection"
 import { WhatsappCTA, WhatsappFloatingButton } from "@/components/whatsapp-cta"
 import { Footer } from "@/components/footer"
 
@@ -21,6 +22,7 @@ export default function Home() {
         <EventInfo />
         <Pricing />
         <RegistrationForm />
+        <PaymentSection />
         <WhatsappCTA />
       </main>
       <Footer />

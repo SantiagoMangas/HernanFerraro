@@ -113,7 +113,7 @@ export function CoachProfile() {
               </p>
               <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
                 <span className="text-cyan-400 font-bold mt-1">•</span>
-                <span>Clasificación a <span className="text-cyan-400">Tokio 2020 (Masculino)</span></span>
+                <span>Clasificación a <span className="text-cyan-400">Tokio 2020 (Femenino)</span></span>
               </p>
               <p className="text-white/80 text-base sm:text-lg font-medium flex items-start gap-3">
                 <span className="text-cyan-400 font-bold mt-1">•</span>
