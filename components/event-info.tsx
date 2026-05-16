@@ -104,7 +104,6 @@ export function EventInfo() {
   return (
     <section id="info" className="py-20 sm:py-32 relative" ref={ref}>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -119,7 +118,6 @@ export function EventInfo() {
           </h2>
         </motion.div>
 
-        {/* Info cards grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -170,7 +168,6 @@ export function EventInfo() {
           </motion.div>
         </div>
 
-        {/* Limited spots warning */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -190,7 +187,6 @@ export function EventInfo() {
           </div>
         </motion.div>
 
-        {/* Schedule */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
